@@ -1,0 +1,16 @@
+[project]
+name = "noaa"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "psycopg[binary]>=3.3.3",
+    "python-dotenv>=1.2.2",
+    "requests>=2.33.1",
+]
+
+[dependency-groups]
+dev = [
+    "pdbpp>=0.12.1",
+]
