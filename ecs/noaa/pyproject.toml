@@ -1,12 +1,13 @@
 [project]
-name = "noaa"
+name = "noaa-api-app"
 version = "0.1.0"
-description = "Add your description here"
+description = "Pulls noaa api weather data into a postgres database"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
     "psycopg[binary]>=3.3.3",
     "python-dotenv>=1.2.2",
+    "pyyaml>=6.0.3",
     "requests>=2.33.1",
 ]
 
