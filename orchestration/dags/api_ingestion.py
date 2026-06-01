@@ -36,8 +36,9 @@ def api_ingest():
 
   test = BashOperator(
       task_id="test",
-      bash_command="echo hello",
+      bash_command="echo IMAGE_NAME={{ env.IMAGE_NAME }}"
   )
+
 
   dag = test >> noaa_ingestion
 
