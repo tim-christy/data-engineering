@@ -18,7 +18,7 @@ def api_ingest():
 
   noaa_ingestion = DockerOperator(
       task_id="noaa_ingestion",
-      image="noaa",
+      image=os.environ.get("IMAGE_NAME"),
       network_mode=os.environ.get("DOCKER_NETWORK"),
       mount_tmp_dir=False,
       environment={
