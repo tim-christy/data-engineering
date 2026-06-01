@@ -15,7 +15,7 @@ logging.getLogger(__name__).info(f"DOCKER_NETWORK={os.environ.get('DOCKER_NETWOR
 
 @dag(
   start_date=datetime(2024, 1, 1),
-  schedule="@daily",
+  schedule="0 6,12,18 * * *",
   catchup=False,
 )
 def api_ingest():
