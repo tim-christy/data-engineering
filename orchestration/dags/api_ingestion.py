@@ -9,6 +9,10 @@ from airflow.operators.bash import BashOperator
 from pathlib import Path
 load_dotenv(Path(__file__).parent / ".env-api")
 
+import logging
+logging.getLogger(__name__).info(f"IMAGE_NAME={os.environ.get('IMAGE_NAME')}")
+logging.getLogger(__name__).info(f"DOCKER_NETWORK={os.environ.get('DOCKER_NETWORK')}")
+
 @dag(
   start_date=datetime(2024, 1, 1),
   schedule="@daily",
@@ -36,7 +40,7 @@ def api_ingest():
 
   test = BashOperator(
       task_id="test",
-      bash_command="echo IMAGE_NAME={{ env.IMAGE_NAME }}"
+      bash_command=f"echo IMAGE_NAME={{ os.environ.get('IMAGE_NAME') }}"
   )
 
 
