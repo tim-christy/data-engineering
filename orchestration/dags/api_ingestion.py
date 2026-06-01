@@ -40,7 +40,7 @@ def api_ingest():
 
   test = BashOperator(
       task_id="test",
-      bash_command=f"echo IMAGE_NAME={{ os.environ.get('IMAGE_NAME') }}"
+      bash_command=f"echo 'test'"
   )
 
 
