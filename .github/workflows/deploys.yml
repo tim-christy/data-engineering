@@ -37,5 +37,6 @@ jobs:
           host: ${{ secrets.PI_HOST }}
           username: tim
           key: ${{ secrets.RPI }}
-          script: docker pull ghcr.io/tim-christy/noaa:latest
-
+          script: |
+            docker pull ghcr.io/tim-christy/noaa:latest
+            cd ~/data-engineering && git pull

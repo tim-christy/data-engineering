@@ -19,7 +19,7 @@ def api_ingest():
   noaa_ingestion = DockerOperator(
       task_id="noaa_ingestion",
       image="noaa",
-      network_mode="localdb_data_engineering",
+      network_mode=os.environ.get("DOCKER_NETWORK"),
       mount_tmp_dir=False,
       environment={
           "ECS_USER": os.environ.get("ECS_USER"),
